@@ -19,7 +19,7 @@ public class HomeController {
 	@RequestMapping(value = "reservation.go", method = RequestMethod.GET)
 	public String reservation(Locale locale, Model model) {
 		
-		return "reservation";
+		return "Reservation/reservation";
 	}
 	
 	
