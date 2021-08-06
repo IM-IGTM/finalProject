@@ -8,5 +8,7 @@
 </head>
 <body>
 home
+
+<a href="reservation.go">택배 예약 시스템</a>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.team1.tracking;
+package com.team1.boxfix;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -14,6 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
+	
+	
+	@RequestMapping(value = "reservation.go", method = RequestMethod.GET)
+	public String reservation(Locale locale, Model model) {
+		
+		return "reservation";
+	}
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
