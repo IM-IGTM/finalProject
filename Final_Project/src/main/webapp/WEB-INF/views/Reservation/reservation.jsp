@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+<script type="text/javascript" src="resources/js/jQuery.js"></script>
 <script type="text/javascript" src="resources/js/ISH.js"></script>
 <style>
 .box1 {
@@ -13,26 +13,28 @@
 }
 </style>
 <script type="text/javascript">
-	// 체크박스 전체 선택
-	$(".checkbox_group").on(
-			"click",
-			"#check_all",
-			function() {
-				$(this).parents(".checkbox_group").find('input').prop(
-						"checked", $(this).is(":checked"));
+	// 체크박스 전체 선택		
+	$(function() {
+		$(".checkbox_group").on(
+				"click",
+				"#check_all",
+				function() {
+					$(this).parents(".checkbox_group").find('input').prop(
+							"checked", $(this).is(":checked"));
+				});
+		// 체크박스 개별 선택
+		$(".checkbox_group").on("click", ".normal", function() {
+			var is_checked = true;
+
+			$(".checkbox_group .normal").each(function() {
+				is_checked = is_checked && $(this).is(":checked");
 			});
 
-	// 체크박스 개별 선택
-	$(".checkbox_group").on("click", ".normal", function() {
-		var is_checked = true;
-
-		$(".checkbox_group .normal").each(function() {
-			is_checked = is_checked && $(this).is(":checked");
+			$("#check_all").prop("checked", is_checked);
 		});
-
-		$("#check_all").prop("checked", is_checked);
 	});
 </script>
+</head>
 <body>
 	<!--  
 참고 사이트! 
@@ -52,7 +54,6 @@ js : https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=javaking75&
 		<table border="3px">
 			<tr>
 				<td>개인택배예약</td>
-				<td>반품예약</td>
 			</tr>
 		</table>
 		<table border="3px" class="checkbox_group">

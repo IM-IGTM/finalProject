@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ReservationController {
 
-	
+	@RequestMapping(value = "reservation.form", method = RequestMethod.GET)
+	public String reservationForm(Locale locale, Model model) {
+		
+		return "Reservation/reservationForm";
+	}
 
 }
